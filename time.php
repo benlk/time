@@ -24,11 +24,42 @@
             p.tzdata {margin-top:2em; color: #000; text-align: center; font-family: 'Open Sans Condensed', sans-serif;}
             p.footer {color: #111; text-align: center; font-family: 'Open Sans Condensed', sans-serif;}
             span.note {font-family: 'Open Sans Condensed', sans-serif;}
+	    .github {position: absolute; top: 0; right: 0; border: 0;}
+	    
+	    @media (max-width: 500px) {
+		#container {
+		    width: 100%;
+		    padding: 0 5px 5px;
+		}
+		p.alarmset {
+		    font-size: 2em;
+		    line-height: 1em;
+		}
+		.github {
+		    width: 75px;
+		}
+	    }
+	    @media (max-width: 300px) {
+		#container {
+		    width: 100%;
+		    padding: 0 5px 5px;
+		}
+		p.alarmset {
+		    font-size: 1.5em;
+		    line-height: 1em;
+		}
+		p.tzdata, p.footer {
+		    font-size: 0.8em;
+		}
+		.github {
+		    width: 75px;
+		}
+	    }
         </style>
         <?php date_default_timezone_set('America/New_York'); ?>
     </head>
     <body>
-        <a href="https://github.com/benlk/time"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+        <a href="https://github.com/benlk/time"><img class="github" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
     	<div id="container">
 		    <h1>Set your alarm to:</h1>
 		    <p class="alarmset "><?php echo date('h:i a', time()); ?> <span class="note">&larr; now</span></p>
